@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "npm start -w express-backend & npm start -w react-frontend"
+    "start": "npm start -w react-frontend"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "workspaces": [
-    "packages/*"
+    "packages/express-backend",
+    "packages/react-frontend"
   ]
 }
