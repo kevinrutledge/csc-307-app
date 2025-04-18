@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm start -w express-backend & npm start -w react-frontend"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "workspaces": [
-      "packages/*"
+    "packages/*"
   ]
 }
