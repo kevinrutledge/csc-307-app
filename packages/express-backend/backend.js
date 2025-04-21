@@ -51,8 +51,16 @@ const findUserByIndex = (id) =>
   users.users_list.findIndex((user) => user.id === id);
 
 const addUser = (user) => {
-  users["users_list"].push(user);
-  return user;
+  const newUser = {
+    id: generateId(),
+    ...user,
+  };
+  users["users_list"].push(newUser);
+  return newUser;
+};
+
+const generateId = () => {
+  return Math.random().toString(36).substring(2, 9);
 };
 
 app.use(cors());
@@ -104,7 +112,7 @@ app.delete("/users/:id", (req, res) => {
 
 app.post("/users", (req, res) => {
   const userToAdd = req.body;
-  addUser(userToAdd);
+  const newUser = addUser(userToAdd);
   res.status(201).send();
 });
 
