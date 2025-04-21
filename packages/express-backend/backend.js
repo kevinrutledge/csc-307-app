@@ -106,7 +106,7 @@ app.delete("/users/:id", (req, res) => {
   } else {
     const index = findUserByIndex(id);
     users.users_list.splice(index, 1);
-    res.send(result);
+    res.status(204).end();
   }
 });
 
