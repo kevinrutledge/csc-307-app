@@ -1,5 +1,14 @@
 import mongoose from "mongoose";
 import userModel from "../models/user.js";
+import dotenv from "dotenv";
+
+dotenv.config();
+const { MONGO_CONNECTION_STRING } = process.env;
+
+mongoose.set("debug", true);
+mongoose
+  .connect(MONGO_CONNECTION_STRING + "users")
+  .catch((error) => console.log(error));
 
 function getUsers(name, job) {
   let promise;
