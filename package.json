@@ -13,6 +13,7 @@
     "packages/react-frontend"
   ],
   "dependencies": {
-    "cors": "^2.8.5"
+    "cors": "^2.8.5",
+    "mongoose": "^8.14.0"
   }
 }
